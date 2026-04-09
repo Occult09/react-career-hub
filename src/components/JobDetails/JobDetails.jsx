@@ -6,11 +6,12 @@ const JobDetails = () => {
 
     const jobs = useLoaderData()
     const { id } = useParams()
+    const idInt = parseInt(id)
 
     const currentJob = jobs.find(job => job.id == id)
 
     const handleApplyJob = () => {
-        saveJobApplication(id)
+        saveJobApplication(idInt)
         toast("You have applied successfully!");
     }
 
